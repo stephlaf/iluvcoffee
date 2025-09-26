@@ -1,0 +1,22 @@
+meta {
+  name: create coffee
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:3000/coffees
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Paris",
+    "brand": "Nespresso"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

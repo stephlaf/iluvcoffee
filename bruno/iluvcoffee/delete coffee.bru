@@ -1,0 +1,15 @@
+meta {
+  name: delete coffee
+  type: http
+  seq: 6
+}
+
+delete {
+  url: http://localhost:3000/coffees/123
+  body: json
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

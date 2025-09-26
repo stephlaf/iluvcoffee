@@ -1,0 +1,22 @@
+meta {
+  name: update coffee
+  type: http
+  seq: 5
+}
+
+patch {
+  url: http://localhost:3000/coffees/123
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Miami",
+    "brand": "Nespresso"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

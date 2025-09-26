@@ -1,0 +1,20 @@
+meta {
+  name: all coffees
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3000/coffees
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~limit: 20
+  ~offset: 10
+}
+
+settings {
+  encodeUrl: true
+}
