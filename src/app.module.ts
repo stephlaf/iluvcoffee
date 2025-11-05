@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { CoffeesModule } from './coffees/coffees.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CoffeeRatingModule } from './coffee-rating/coffee-rating.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [
@@ -12,13 +13,14 @@ import { CoffeeRatingModule } from './coffee-rating/coffee-rating.module';
       type: 'postgres',
       host: 'localhost',
       port: 5433,
-      username: 'postgres',
-      password: 'pass123',
-      database: 'iluvcoffee',
+      username: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASSWORD,
+      database: process.env.DATABASE_NAME,
       autoLoadEntities: true,
       // synchronize: true, // Disable in production!!!
     }),
     CoffeeRatingModule,
+    DatabaseModule,
   ],
   controllers: [AppController],
   providers: [AppService],
