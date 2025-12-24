@@ -5,11 +5,20 @@ meta {
 }
 
 get {
-  url: http://localhost:3000/coffees/7
+  url: http://localhost:3000/coffees/4
   body: none
   auth: inherit
 }
 
+params:query {
+  ~Authorization: poutpoutjambon
+}
+
+headers {
+  Authorization: poutpoutjambon
+}
+
 settings {
   encodeUrl: true
+  timeout: 0
 }
