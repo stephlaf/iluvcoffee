@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class SchemaSync1761945001886 implements MigrationInterface {
-  name = 'SchemaSync1761945001886'
+  name = 'SchemaSync1761945001886';
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(

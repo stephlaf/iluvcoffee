@@ -6,8 +6,12 @@ import { Flavor } from './entities/flavor-entity';
 import { Coffee } from './entities/coffee.entity';
 import { NotFoundException } from '@nestjs/common';
 
-type MockRepository<T extends ObjectLiteral = ObjectLiteral> = Partial<Record<keyof Repository<T>, jest.Mock>>;
-const createMockRepository = <T extends ObjectLiteral = ObjectLiteral>(): MockRepository<T> => ({
+type MockRepository<T extends ObjectLiteral = ObjectLiteral> = Partial<
+  Record<keyof Repository<T>, jest.Mock>
+>;
+const createMockRepository = <
+  T extends ObjectLiteral = ObjectLiteral,
+>(): MockRepository<T> => ({
   findOne: jest.fn(),
   create: jest.fn(),
 });

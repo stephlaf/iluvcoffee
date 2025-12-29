@@ -15,10 +15,11 @@ import { LoggingMiddleware } from './middleware/logging.middleware';
 })
 export class CommonModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LoggingMiddleware)
+    consumer
+      .apply(LoggingMiddleware)
       // All routes
       .forRoutes('*');
-      // Specific routes
-      // .forRoutes({ path: 'coffees', method: RequestMethod.GET });
+    // Specific routes
+    // .forRoutes({ path: 'coffees', method: RequestMethod.GET });
   }
 }

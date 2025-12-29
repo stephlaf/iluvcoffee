@@ -8,7 +8,8 @@ import { Response } from 'express';
 
 @Catch(HttpException)
 export class HttpExceptionFilter<T extends HttpException>
-  implements ExceptionFilter {
+  implements ExceptionFilter
+{
   catch(exception: T, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
@@ -18,7 +19,7 @@ export class HttpExceptionFilter<T extends HttpException>
     const error =
       typeof response === 'string'
         ? { message: exceptionResponse }
-        : (exceptionResponse as object );
+        : (exceptionResponse as object);
 
     response.status(status).json({
       ...error,
